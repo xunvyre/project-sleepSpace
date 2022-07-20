@@ -5,7 +5,8 @@
 #circle{
     width: 100px;
     height: 100px;
-    background: center blue;
+    background: white;
     border-radius: 50%;
+   
 
 }

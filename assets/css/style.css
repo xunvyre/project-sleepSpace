@@ -1,0 +1,64 @@
+:root {
+   background-color: #202b35;
+    --dark:#202b35;
+    --mid: #8393ca
+    --light: #dbdacb
+    --white: #fff
+}
+
+header {
+    display: flex;
+}
+
+body
+{
+ font-family: Century Gothic
+
+}
+
+.container {
+    position:relative;
+    width: 500px;
+    height: 150px;
+   text-align: center;
+
+}
+
+.container .box {
+    position: relative;
+    height: 80px;
+    background-color:#8393ca;
+    border-radius: 20px;
+    text-align: center;
+    padding: 2.5px;
+    
+}
+
+#circle{
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 50%;
+    position:sticky;
+
+}
+
+
+.create .create-box {
+    position: relative;
+     height: 200px;
+    background-color:#8393ca;
+    border-radius: 20px; 
+    text-align: center;
+}
+
+.Quiz-box {
+    position: relative;
+    width: 45%;
+    height: 80%;
+    background-color:var(--dark);
+    border-radius: 10px;
+   
+}
+
+

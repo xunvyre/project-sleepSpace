@@ -1,0 +1,11 @@
+* {
+    background-color: darkblue;
+}
+
+#circle{
+    width: 100px;
+    height: 100px;
+    background: center blue;
+    border-radius: 50%;
+
+}

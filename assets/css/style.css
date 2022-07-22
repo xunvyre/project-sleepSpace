@@ -1,64 +1,115 @@
+/*--------general styles*/
 :root {
-   background-color: #202b35;
     --dark:#202b35;
-    --mid: #8393ca
-    --light: #dbdacb
-    --white: #fff
+    --mid: #8393ca;
+    --light: #dbdacb;
+    --white: #fff;
 }
 
-header {
+*
+{
+    font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+}
+
+.margin-top
+{
+    margin-top: 20px;
+}
+
+.box
+{
+    background-color: var(--mid);
+}
+
+.box:not(:last-child)
+{
+    margin: 0px;
+}
+
+.columns
+{
+    margin: 0px;
+}
+
+.columns:not(:last-child)
+{
+    margin: 0px;
+}
+
+/*--------header styles*/
+
+.moon-container
+{
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 999;
+}
+
+.moon-phase
+{
+    background-color: #dbdacb;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+header
+{
+    height: 150px;
+    padding: 30px;
+}
+
+/*--------header styles
+header
+{
     display: flex;
 }
 
-body
+.container
 {
- font-family: Century Gothic
-
-}
-
-.container {
-    position:relative;
+    position: relative;
     width: 500px;
     height: 150px;
-   text-align: center;
+    text-align: center;
 
 }
 
-.container .box {
+.container .box
+{
     position: relative;
     height: 80px;
     background-color:#8393ca;
     border-radius: 20px;
     text-align: center;
     padding: 2.5px;
-    
 }
 
-#circle{
+#circle
+{
     width: 150px;
     height: 150px;
     background: white;
     border-radius: 50%;
     position:sticky;
-
 }
 
 
-.create .create-box {
+.create .create-box
+{
     position: relative;
-     height: 200px;
+    height: 200px;
     background-color:#8393ca;
     border-radius: 20px; 
     text-align: center;
 }
 
-.Quiz-box {
+.Quiz-box
+{
     position: relative;
     width: 45%;
     height: 80%;
     background-color:var(--dark);
     border-radius: 10px;
-   
 }
-
-

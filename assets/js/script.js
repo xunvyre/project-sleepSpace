@@ -1,4 +1,14 @@
 //const clearBtn = document.querySelector("#borrowing");
+const funFact = document.querySelector("#funFact");
+//array to hold random facts
+let randomFactArry = [
+  "70% + of high school students and 80% + of college students report not getting their recommended hours of sleep per night!",
+  "blah blah",
+  "fact here",
+  "fact there",
+  "fact everywhere",
+  "make this random",
+];
 
 //function to get moonphase
 var getMoonApi = function (lat, lon) {
@@ -22,4 +32,8 @@ clearBtn.addEventListener("click", function () {
   });
 });
 
-//spotify or youtube API
+//fun fact function (random) occurs on load or refresh
+window.onload = function randomFact() {
+  let randomNum = Math.floor(Math.random() * randomFactArry.length);
+  funFact.innerHTML = randomFactArry[randomNum];
+};

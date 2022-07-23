@@ -14,7 +14,7 @@
 
 body
 {
-    background-image: linear-gradient(180deg, var(--dark) 0%, var(--white) 90%);
+    background-image: linear-gradient(180deg, var(--dark) 0%, var(--white) 80%, var(--dark))
 }
 
 .margin-top
@@ -113,40 +113,69 @@ h3
     font-size: 25px;
 }
 
-h4
-{
-    font-size: 20px;
-    text-align: center;
-}
-
 p
 {
     font-size: 18px;
     margin: 0px 0px 5px 5px;
 }
 
+/*--------quiz styles*/
+
 .last-box
 {
     margin: 14px 0px;
 }
 
-/*--------footer styles*/
-
-footer
+.quiz-box
 {
     background-color: var(--dark);
+    box-shadow: none;
 }
 
+.quiz-box h2
+{
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--white);
+}
+
+.quiz-box p
+{
+    color: var(--white);
+}
+
+.answer
+{
+    margin-top: 15px;
+}
+.answer p
+{
+    text-align: center;
+    font-size: 20px;
+    margin: 0px;
+}
+/*--------footer styles*/
 footer p
 {
     margin: 0px 0px 0px 5px;
     color: var(--white);
+    font-size: 12px;
 }
 
-footer button
+button
 {
     background-color: #dbdacb;
+    border-radius: 12px;
+    height: auto;
 }
+
+footer button p
+{
+    color: var(--dark);
+    font-size: 14px;
+    text-transform: none;
+}
+
+
 
 @media screen and (min-width: 870px)
 {
@@ -175,10 +204,6 @@ footer button
     header p
     {
         margin-bottom: 0px;
-    }
-    .column, .columns
-    {
-        margin-left: 0%;
     }
     .row
     {

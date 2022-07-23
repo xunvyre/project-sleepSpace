@@ -87,7 +87,7 @@ header p
 
 .last-box
 {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 @media screen and (min-width: 870px)
@@ -125,6 +125,5 @@ header p
     .divider
     {
         flex: 1 0 100%;
-        padding: 0px;
     }
 }

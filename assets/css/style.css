@@ -9,6 +9,12 @@
 *
 {
     font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+
+body
+{
+    background-image: linear-gradient(180deg, var(--dark) 0%, var(--white) 90%);
 }
 
 .margin-top
@@ -21,6 +27,7 @@
     background-color: var(--mid);
     border-radius: 20px;
     padding: 10px;
+    margin: 5px 0px;
 }
 
 .row
@@ -61,61 +68,63 @@ header
     padding: 30px;
 }
 
+header h1
+{
+    font-weight: 700;
+    font-size: 5vw;
+    background-image: linear-gradient(180deg, var(--light) 20%, black 100%);
+    background-clip: text;
+    color: var(--light);
+    -webkit-background-clip: text;
+}
+
+header p
+{
+    color: var(--white);
+}
+
 /*--------main content styles*/
 
-.large-box
+.last-box
 {
-    margin: 10px 0px;
-}
-/*--------header styles
-header
-{
-    display: flex;
+    margin-top: 5px;
 }
 
-.container
+@media screen and (min-width: 870px)
 {
-    position: relative;
-    width: 500px;
-    height: 150px;
-    text-align: center;
-
+    .moon-container
+    {
+        top: 1%;
+    }
+    .column, .columns
+    {
+        margin-left: 4%;
+    }
 }
 
-.container .box
+@media screen and (max-width: 870px)
 {
-    position: relative;
-    height: 80px;
-    background-color:#8393ca;
-    border-radius: 20px;
-    text-align: center;
-    padding: 2.5px;
-}
+    header
+    {
+        height: 75px;
+        padding: 150px 0px 0px 0px;
+    }
+    .column, .columns
+    {
+        margin-left: 0%;
+    }
+    .row
+    {
+        flex-wrap: wrap;
+    }
+    .row-one
+    {
+        flex: 1 0 100%;
 
-#circle
-{
-    width: 150px;
-    height: 150px;
-    background: white;
-    border-radius: 50%;
-    position:sticky;
-}
-
-
-.create .create-box
-{
-    position: relative;
-    height: 200px;
-    background-color:#8393ca;
-    border-radius: 20px; 
-    text-align: center;
-}
-
-.Quiz-box
-{
-    position: relative;
-    width: 45%;
-    height: 80%;
-    background-color:var(--dark);
-    border-radius: 10px;
+    }
+    .divider
+    {
+        flex: 1 0 100%;
+        padding: 0px;
+    }
 }

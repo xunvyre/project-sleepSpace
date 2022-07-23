@@ -1,121 +1,94 @@
 /*--------general styles*/
 :root {
-    --dark:#202b35;
-    --mid: #8393ca;
-    --light: #dbdacb;
-    --white: #fff;
+  --dark: #202b35;
+  --mid: #8393ca;
+  --light: #dbdacb;
+  --white: #fff;
 }
 
-*
-{
-    font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+* {
+  font-family: "Century Gothic", Arial, Helvetica, sans-serif;
 }
 
-.margin-top
-{
-    margin-top: 20px;
+body {
+    background-color: #202b35;
 }
 
-.box
-{
-    background-color: var(--mid);
-    border-radius: 20px;
-    padding: 10px;
+.margin-top {
+  margin-top: 20px;
 }
 
-.row
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+.box {
+  background-color: var(--mid);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 1px lightpink;
+
 }
 
-.center-row
-{
-    align-items: center;
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
+.center-row {
+  align-items: center;
+}
 
 /*--------header styles*/
 
-.moon-container
-{
-    margin: 0 auto;
-    position: fixed;
-    left: 50%;
-    margin-left: -75px;
-    z-index: 999;
+.moon-container {
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  margin-left: -75px;
+  z-index: 999;
 }
 
-.moon-phase
-{
-    background-color: #dbdacb;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
+.moon-phase {
+  background-color: #dbdacb;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
 }
 
-header
-{
-    height: 150px;
-    padding: 30px;
+header {
+  height: 150px;
+  padding: 30px;
 }
 
 /*--------main content styles*/
 
-.large-box
-{
-    margin: 10px 0px;
-}
-/*--------header styles
-header
-{
-    display: flex;
+.large-box {
+  margin: 10px 0px;
 }
 
-.container
-{
-    position: relative;
-    width: 500px;
-    height: 150px;
-    text-align: center;
+p {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  color:var(--white);
 
 }
 
-.container .box
-{
-    position: relative;
-    height: 80px;
-    background-color:#8393ca;
-    border-radius: 20px;
-    text-align: center;
-    padding: 2.5px;
+h1 {
+  font-size: 40px;
+  text-shadow: 2px 2px 5px #202b35;
+  color: var(--light);
+  font-weight: 900;
+  font-style: italic;
+
 }
 
-#circle
-{
-    width: 150px;
-    height: 150px;
-    background: white;
-    border-radius: 50%;
-    position:sticky;
+footer {
+  background-color: #202b35;
+  border-radius: 20px;
+}
+
+button {
+  background-color: #8393ca;
+  box-shadow: 2px 2px 2px 1px lightpink;
 }
 
 
-.create .create-box
-{
-    position: relative;
-    height: 200px;
-    background-color:#8393ca;
-    border-radius: 20px; 
-    text-align: center;
-}
-
-.Quiz-box
-{
-    position: relative;
-    width: 45%;
-    height: 80%;
-    background-color:var(--dark);
-    border-radius: 10px;
-}

@@ -27,7 +27,8 @@ body
     background-color: var(--mid);
     border-radius: 20px;
     padding: 10px;
-    margin: 5px 0px;
+    margin: 7px 0px;
+    box-shadow: 0px 5px 5px 0px var(--dark);
 }
 
 .row
@@ -51,7 +52,7 @@ body
     position: fixed;
     left: 50%;
     margin-left: -75px;
-    z-index: 999;
+    z-index: 2;
 }
 
 .moon-phase
@@ -71,7 +72,8 @@ header
 header h1
 {
     font-weight: 700;
-    font-size: 5vw;
+    font-size: 42px;
+    text-align: center;
     background-image: linear-gradient(180deg, var(--light) 20%, black 100%);
     background-clip: text;
     color: var(--light);
@@ -81,13 +83,69 @@ header h1
 header p
 {
     color: var(--white);
+    text-align: center;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 /*--------main content styles*/
+h2, h3, h4
+{
+    font-weight: 700;
+}
+
+h2
+{
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 0px 3px 2px var(--dark);
+    color: var(--white);
+}
+
+.h2-variant
+{
+    color: var(--dark);
+    text-shadow: none;
+}
+
+h3
+{
+    font-size: 25px;
+}
+
+h4
+{
+    font-size: 20px;
+    text-align: center;
+}
+
+p
+{
+    font-size: 18px;
+    margin: 0px 0px 5px 5px;
+}
 
 .last-box
 {
-    margin-top: 10px;
+    margin: 14px 0px;
+}
+
+/*--------footer styles*/
+
+footer
+{
+    background-color: var(--dark);
+}
+
+footer p
+{
+    margin: 0px 0px 0px 5px;
+    color: var(--white);
+}
+
+footer button
+{
+    background-color: #dbdacb;
 }
 
 @media screen and (min-width: 870px)
@@ -108,6 +166,15 @@ header p
     {
         height: 75px;
         padding: 150px 0px 0px 0px;
+    }
+    header h1
+    {
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+    header p
+    {
+        margin-bottom: 0px;
     }
     .column, .columns
     {

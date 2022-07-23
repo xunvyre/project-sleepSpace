@@ -19,22 +19,22 @@
 .box
 {
     background-color: var(--mid);
+    border-radius: 20px;
+    padding: 10px;
 }
 
-.box:not(:last-child)
+.row
 {
-    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
-.columns
+.center-row
 {
-    margin: 0px;
+    align-items: center;
 }
 
-.columns:not(:last-child)
-{
-    margin: 0px;
-}
 
 /*--------header styles*/
 
@@ -61,6 +61,12 @@ header
     padding: 30px;
 }
 
+/*--------main content styles*/
+
+.large-box
+{
+    margin: 10px 0px;
+}
 /*--------header styles
 header
 {

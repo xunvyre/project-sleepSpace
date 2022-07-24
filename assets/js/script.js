@@ -107,3 +107,11 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
   event.target.playVideo();
 }
+
+
+// Clearing console and localStorage data function
+console.log("Clear my data")
+function myfunction() {
+    console.clear();
+    localStorage.clear();
+}

@@ -49,6 +49,10 @@ const questions = [
   "Powering down is an important part of falling asleep, as most digital apps are designed to keep you engaged. This is a great time to focus on an offline hobby like crochet, or to refocus your brain by doing puzzle activities. Would you to add an offline activity to your sleepSpace?",
 ];
 
+const musicRec = [
+  ""
+]
+
 //function to get moonphase
 var getMoonApi = function (lat, lon) {
   let moonApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=be26d6ce167eb956b80efee1a9fcecbd`;
@@ -78,6 +82,7 @@ window.onload = function randomFact() {
   funFact.innerHTML = randomFactArry[randomNum];
   dailyRecHandler();
 };
+
 //Switches to another rec based on time //similar code can be used for habit list reappearing
 var dailyRecHandler = function () {
   let date = new Date();
@@ -95,7 +100,7 @@ function onYouTubeIframeAPIReady() {
     width: "640",
     videoId: "n61ULEU7CO0", //Change id here. Found in URL of youtube vids
     playerVars: {
-      autoplay: 1, //autoplay is not supported on google chrome for similar reasons to why getting user location on load is not
+
       playsinline: 1,
     },
     events: {
@@ -103,7 +108,7 @@ function onYouTubeIframeAPIReady() {
     },
   });
 }
-
+// plays video once ready (google chrome does not allow autoplay)
 function onPlayerReady(event) {
   event.target.playVideo();
 }

@@ -12,8 +12,6 @@ In the future, we would like to polish the interface with a drag-and-drop order,
 * CSS
 * JavaScript
 * Skeleton
-* jQuery
-* Moment.js
 
 ## Website
 https://xunvyre.github.io/sleepSpace/

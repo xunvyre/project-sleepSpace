@@ -63,16 +63,22 @@ body {
     z-index: 2;
 }
 
-.moon-phase {
-  background-color: #dbdacb;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
+.moon-phase
+{
+    background-image: url(../images/moon_full.png);
+    background-position: center;
+    background-attachment: center;
+    background-size: contain;
+    background-color: #dbdacb;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
 }
 
-header {
-  height: 150px;
-  padding: 30px;
+header
+{
+    height: 150px;
+    padding: 30px;
 }
 
 header h1

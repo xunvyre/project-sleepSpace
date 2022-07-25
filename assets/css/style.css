@@ -1,9 +1,9 @@
 /*--------general styles*/
 :root {
-    --dark:#202b35;
-    --mid: #8393ca;
-    --light: #dbdacb;
-    --white: #fff;
+  --dark: #202b35;
+  --mid: #8393ca;
+  --light: #dbdacb;
+  --white: #fff;
 }
 
 *
@@ -22,9 +22,8 @@ body
 
 }
 
-.margin-top
-{
-    margin-top: 20px;
+body {
+  background-color: var(--dark);
 }
 
 .box
@@ -36,18 +35,22 @@ body
     box-shadow: 0px 5px 5px 0px var(--dark);
 }
 
-.row
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+.box {
+  background-color: var(--mid);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 1px #301934;
 }
 
-.center-row
-{
-    align-items: center;
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
+.center-row {
+  align-items: center;
+}
 
 /*--------header styles*/
 
@@ -60,18 +63,16 @@ body
     z-index: 2;
 }
 
-.moon-phase
-{
-    background-color: #dbdacb;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
+.moon-phase {
+  background-color: #dbdacb;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
 }
 
-header
-{
-    height: 150px;
-    padding: 30px;
+header {
+  height: 150px;
+  padding: 30px;
 }
 
 header h1

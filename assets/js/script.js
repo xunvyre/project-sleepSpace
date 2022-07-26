@@ -111,7 +111,7 @@ function onPlayerReady(event) {
 
 // Clearing console and localStorage data function
 console.log("Clear my data")
-function myfunction() {
+function myFunction() {
     console.clear();
     localStorage.clear();
 }

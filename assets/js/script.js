@@ -3,6 +3,8 @@ const funFact = document.querySelector("#funFact");
 const dailyRec = document.querySelector("#dailyRec");
 const quizQuestions = document.querySelector("#questions");
 const displayMusic = document.querySelector("#youtube");
+const error = document.querySelector("#error");
+const hideErrorBtn = document.querySelector("#error-btn")
 //array to hold random facts
 const randomFactArry = [
   "70% + of high school students and 80% + of college students report not getting their recommended hours of sleep per night!",
@@ -57,7 +59,12 @@ var getMoonApi = function (lat, lon) {
     .then((data) => {
       let moonPhase = data.daily[0].moon_phase;
       console.log(moonPhase);
-    });
+    })
+    .then((err) => {
+        console.log(err);
+    showError();
+    })
+
 };
 //code is annoying unless this is commented out for now until new button is available
 
@@ -128,7 +135,7 @@ var div  = document.getElementById("location");
         if (navigator.geolocation) {
           navigator.geolocation.watchPosition(showPosition);
         } else {
-          div.innerHTML = "The Browser Does not Support Geolocation";
+        //   div.innerHTML = "The Browser Does not Support Geolocation";
         }
       }
 
@@ -137,3 +144,14 @@ var div  = document.getElementById("location");
        console.log("coordinates", coordinates);
       }
       getLocation();
+
+      function showError() {
+        error.classList.remove("hide")
+      }
+     
+      function hideError() {
+        error.classList.add("hide")
+      }
+    
+      hideErrorBtn.addEventListener('click', hideError);
+      

@@ -148,4 +148,37 @@ button {
     font-size: 17px;
 }
 
+.error-modal {
+position: relative;
+ 
+}
 
+.hide {
+  display: none;
+}
+
+.error-msg {
+position: fixed;
+top: 20%; 
+left: 50%; 
+z-index: 10;
+min-height: 100px;
+min-width: 400px;
+background-color: white;
+padding-top: 30px; 
+border: 2px solid black;
+border-radius: 10px;
+text-align: center;
+}
+
+.cover {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 55; 
+}
+
+.error-msg h3 {
+  color: black; 
+}

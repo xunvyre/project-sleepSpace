@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <!--<link rel="stylesheet" href="./assets/css/style.css" />-->
-    <title>sleepSpace</title>
-  </head>
 
 <head>
   <meta charset="UTF-8" />
@@ -51,17 +40,12 @@
     <div class="row">
       <div class="five columns box row-one">
         <h3>Did you know...</h3>
-        <p>
-          70+% of high school students and 80+% of college students report
-          not getting their recommeneded hours of sleep per night!
-        </p>
+        <p id="funFact"></p>
       </div>
       <div class="two columns divider"></div>
       <div class="five columns box row-one">
         <h3>We recommend... </h3>
-        <p>
-          reading! Incorporate one of your habits with your favorite book.
-        </p>
+        <p id="dailyRec"></p>
       </div>
     </div>
 
@@ -116,7 +100,7 @@
         </p>
       </div>
       <div class="four columns">
-        <button>
+        <button type="button" id="clearButton">
           <p>Clear My Data</p>
         </button>
       </div>
@@ -132,6 +116,7 @@
   </modal>
 
   <script src="./assets/js/script.js"></script>
+
 </body>
 
 

@@ -139,13 +139,13 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startQuiz)
 
 
 
 
 
-function startGame() {
+function startQuiz() {
   console.log('Started')
    startButton.classList.add('hide')
    shuffledQuestions = questions.sort(()  => Math.random() - .10)

@@ -4,7 +4,7 @@ const dailyRec = document.querySelector("#dailyRec");
 const quizQuestions = document.querySelector("#questions");
 const displayMusic = document.querySelector("#youtube");
 const displayMoon = document.querySelector(".moon-phase");
-const clearButton = document.querySelector("#clearButton")
+const clearButton = document.querySelector("#clearButton");
 
 //array to hold random facts
 const randomFactArry = [
@@ -72,19 +72,35 @@ window.addEventListener("load", function () {
 });
 //function to display correct phase
 var moonDisplay = function (moonPhase) {
-  if (moonPhase === 0 || moonPhase === 1) console.log("New Moon");
+  if (moonPhase === 0 || moonPhase === 1)
+    displayMoon.style.backgroundImage = "url('./assets/images/moon_new.png')";
 
-  if (moonPhase >= 0.1 && moonPhase <= 0.24) console.log("Waxing crescent!");
+  if (moonPhase >= 0.1 && moonPhase <= 0.24)
+    displayMoon.style.backgroundImage =
+      "url('./assets/images/moon-waxing-crescent.png')";
 
-  if (moonPhase === 0.25) console.log("First Quarter Moon!");
+  if (moonPhase === 0.25)
+    displayMoon.style.backgroundImage =
+      "url('./assets/images/moon-first-quarter.png')";
 
-  if (moonPhase >= 0.26 && moonPhase <= 0.49) console.log("Waxing Gibious!");
-
-  if (moonPhase === 0.5) console.log("Full Moon!");
-
-  if (moonPhase >= 0.51 && moonPhase <= 0.99)
+  if (moonPhase >= 0.26 && moonPhase <= 0.49)
     displayMoon.style.backgroundImage =
       "url('./assets/images/moon-waxing-gibbous.png')";
+
+  if (moonPhase === 0.5)
+    displayMoon.style.backgroundImage = "url('./assets/images/moon_full.png')";
+
+  if (moonPhase >= 0.51 && moonPhase <= 0.74)
+    displayMoon.style.backgroundImage =
+      "url('./assets/images/moon-waning-crescent.png')";
+
+  if (moonPhase === 0.75)
+    displayMoon.style.backgroundImage =
+      "url('./assets/images/moon-third-quarter.png')";
+
+  if (moonPhase >= 0.76 && moonPhase <= 0.99)
+    displayMoon.style.backgroundImage =
+      "url('./assets/images/moon-waning-gibbous.png')";
 
   return true;
 };

@@ -148,4 +148,13 @@ button {
     font-size: 17px;
 }
 
+/*-- Quiz Section --*/
+.hide {
+  display: none;
+}
+
+.controls {
+  display: flex;
+
+}
 

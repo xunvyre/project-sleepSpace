@@ -36,18 +36,7 @@ const dailyRecArry = [
   "changing your sheets! Not only is this good for your skin, but it can make you more excited for bed.",
 ];
 
-const questions = [
-  "Drinking enough water throughout the day can affect your whole life, including your sleep patterns! Would you like us to remind you to stay hydrated?",
-  "Cleaning is a good way to relieve stress, feel productive, and take control of your environment. Would you like to add a 10-minute clean to your sleepSpace?",
-  "Exercising is one of the most recommended ways to improve sleep. Anything from simple stretches, to a yoga routine, to light cardio can help! Would you like to add physical activity to your sleepSpace?",
-  "There are many forms of meditation, and all of them are shown to improve sleep quality. Would you like to add meditation to your sleepSpace?",
-  "Showering is important for both personal and sleep health, but there is a strong divide between people who shower in the morning vs. the night! Would you like to add showering to your sleepSpace?",
-  "Skin care is another health practice that varies widely from person to person, and can include everything from moisturizing your feet to changing your pillowcase. Would you like us to remind you to take time for your skin care routine?",
-  "Brushing and flossing your teeth before bed is the number one recommended way to keep your teeth healthy. Would you like us to remind you to care for your teeth?",
-  "Calming, familiar smells can help relax the body and mind. Would you like to include aromatherapy in your sleepSpace? (Caution: heat-related aromatherapy items should be extinguished and/or turned off before bed and kept away from animals and children.)", //make sure text in parenthesis is smaller text when appended
-  "Background noise can be beneficial for focus and relaxation. Music, white noise, or even a familiar tv show can help you relax. Would you like to add background noise to your sleepSpace?",
-  "Powering down is an important part of falling asleep, as most digital apps are designed to keep you engaged. This is a great time to focus on an offline hobby like crochet, or to refocus your brain by doing puzzle activities. Would you to add an offline activity to your sleepSpace?",
-];
+
 //IDs for youtube rec (currently just some random ones. Some videos won't display until our site is published)
 const musicRec = ["n61ULEU7CO0", "cq2Ef6rvL6g", "nMfPqeZjc2c"];
 
@@ -139,3 +128,165 @@ function myFunction() {
   console.clear();
   localStorage.clear();
 }
+
+
+// (Quiz Section) Do not touch, it needs to be cleaned and organised (Questions Change when you refresh the page)
+const startButton = document.getElementById('start-btn')
+const nextButton = document.getElementById('next-btn')
+const questionContainerElement = document.getElementById('question-container')
+const questionElement = document.getElementById('dark-box six columns')
+const answerButtonsElement = document.getElementById('answer-buttons')
+
+let shuffledQuestions, currentQuestionIndex
+
+startButton.addEventListener('click', startGame)
+
+
+
+
+
+function startGame() {
+  console.log('Started')
+   startButton.classList.add('hide')
+   shuffledQuestions = questions.sort(()  => Math.random() - .10)
+   questionContainerElement.classList.remove('hide')
+   currentQuestionIndex = 0
+   setNextQuestion()
+}
+
+   function setNextQuestion() {
+    resetState()
+   showQuestion(shuffledQuestions[currentQuestionIndex])
+
+   }
+  
+  
+
+function showQuestion(question) {
+  questionElement.innerText = question.question
+  question.answers.forEach(answer => {
+    const button = document.createElement('button')
+    button.innerText = answer.text
+    button.classList.add('box')
+    if (answer.correct) {
+      button.dataset.correct = answer.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerButtonsElement.appendChild(button)
+ })
+
+}
+
+function resetState() {
+  nextButton.classList.add('hide')
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild
+    (answerButtonsElement.firstChild)
+  }
+ }
+
+
+
+function selectAnswer(e) {
+
+
+}
+
+const questions = [
+  {
+  question: 'Drinking enough water throughout the day can affect your whole life, including your sleep patterns! Would you like us to remind you to stay hydrated?',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+ {
+  question:  'Cleaning is a good way to relieve stress, feel productive, and take control of your environment. Would you like to add a 10-minute clean to your sleepSpace?',
+
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+ {
+  question: 'Exercising is one of the most recommended ways to improve sleep. Anything from simple stretches, to a yoga routine, to light cardio can help! Would you like to add physical activity to your sleepSpace?',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+ {
+  question: 'There are many forms of meditation, and all of them are shown to improve sleep quality. Would you like to add meditation to your sleepSpace?',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+
+ {
+  question: 'Showering is important for both personal and sleep health, but there is a strong divide between people who shower in the morning vs. the night! Would you like to add showering to your sleepSpace?',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+ {
+  question: 'Skin care is another health practice that varies widely from person to person, and can include everything from moisturizing your feet to changing your pillowcase. Would you like us to remind you to take time for your skin care routine?',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+
+ {
+  question: 'Brushing and flossing your teeth before bed is the number one recommended way to keep your teeth healthy. Would you like us to remind you to care for your teeth?',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+
+ {
+  question: 'Calming, familiar smells can help relax the body and mind. Would you like to include aromatherapy in your sleepSpace? (Caution: heat-related aromatherapy items should be extinguished and/or turned off before bed and kept away from animals and children.)',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+
+
+ {
+  question: 'Background noise can be beneficial for focus and relaxation. Music, white noise, or even a familiar tv show can help you relax. Would you like to add background noise to your sleepSpace?',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+
+
+ {
+  question: 'Powering down is an important part of falling asleep, as most digital apps are designed to keep you engaged. This is a great time to focus on an offline hobby like crochet, or to refocus your brain by doing puzzle activities. Would you to add an offline activity to your sleepSpace?',
+            
+   answers: [
+    { text: 'I already do this', correct: true },
+    { text: 'No, Thanks', correct: false }
+  ]
+ },
+]

@@ -1,19 +1,25 @@
 /*--------general styles*/
 :root {
-    --dark:#202b35;
-    --mid: #8393ca;
-    --light: #dbdacb;
-    --white: #fff;
+  --dark: #202b35;
+  --mid: #8393ca;
+  --light: #dbdacb;
+  --white: #fff;
 }
 
 *
 {
     font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+    color: var(--dark);
 }
 
-.margin-top
+body
 {
-    margin-top: 20px;
+    background-image: url("../images/sleepSpaceBG.png");
+    background-position: center;
+    background-attachment: bottom;
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+
 }
 
 .box
@@ -21,20 +27,50 @@
     background-color: var(--mid);
     border-radius: 20px;
     padding: 10px;
+    margin: 7px 0px;
+    box-shadow: 0px 5px 5px 0px var(--dark);
 }
 
 .row
 {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .center-row
 {
-    align-items: center;
+  align-items: center;
+}
+/*--------modal*/
+
+.modal
+{
+    display: none;
+    z-index: 3;
+    height: fit-content;
+    width: 400px;
+    background-color: var(--light);
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -200px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 8px 0px var(--dark);
+    padding: 10px;
 }
 
+.modal p
+{
+    text-align: center;
+}
+
+.modal button
+{
+    background-color: var(--dark);
+    color: var(--light);
+    margin: 10px 150px;
+}
 
 /*--------header styles*/
 
@@ -44,11 +80,15 @@
     position: fixed;
     left: 50%;
     margin-left: -75px;
-    z-index: 999;
+    z-index: 2;
 }
 
 .moon-phase
 {
+    background-image: url(../images/moon_full.png);
+    background-position: center;
+    background-attachment: center;
+    background-size: contain;
     background-color: #dbdacb;
     height: 150px;
     width: 150px;
@@ -61,61 +101,160 @@ header
     padding: 30px;
 }
 
+header h1
+{
+    font-weight: 700;
+    font-size: 42px;
+    text-align: center;
+    color: var(--light);
+    /*background-image: linear-gradient(180deg, var(--light) 20%, black 100%);
+    background-clip: text;
+    -webkit-background-clip: text;*/
+}
+
+header p
+{
+    color: var(--white);
+    text-align: center;
+    font-size: 16px;
+    line-height: 18px;
+}
+
 /*--------main content styles*/
-
-.large-box
+h2, h3, h4
 {
-    margin: 10px 0px;
-}
-/*--------header styles
-header
-{
-    display: flex;
+    font-weight: 700;
 }
 
-.container
+h2
 {
-    position: relative;
-    width: 500px;
-    height: 150px;
+    font-size: 30px;
     text-align: center;
-
+    text-shadow: 0px 3px 2px var(--dark);
+    color: var(--white);
 }
 
-.container .box
+.h2-variant
 {
-    position: relative;
-    height: 80px;
-    background-color:#8393ca;
-    border-radius: 20px;
+    color: var(--dark);
+    text-shadow: none;
+}
+
+h3
+{
+    font-size: 25px;
+}
+
+p
+{
+    font-size: 18px;
+    margin: 0px 0px 5px 5px;
+}
+
+/*--------quiz styles*/
+
+.last-box
+{
+    margin: 14px 0px;
+}
+
+.quiz-box
+{
+    background-color: var(--dark);
+    box-shadow: none;
+}
+
+.quiz-box h2
+{
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--white);
+}
+
+.quiz-box p
+{
+    color: var(--white);
+}
+
+.answer
+{
+    margin-top: 15px;
+}
+.answer p
+{
     text-align: center;
-    padding: 2.5px;
+    font-size: 20px;
+    margin: 0px;
+}
+/*--------footer styles*/
+
+footer
+{
+    margin-top: 100px;
+    background-color: var(--dark);
 }
 
-#circle
+footer p
 {
-    width: 150px;
-    height: 150px;
-    background: white;
-    border-radius: 50%;
-    position:sticky;
+    margin: 0px 0px 0px 5px;
+    color: var(--white);
+    font-size: 12px;
+}
+
+button
+{
+    background-color: #dbdacb;
+    border-radius: 12px;
+    height: auto;
+}
+
+footer button p
+{
+    color: var(--dark);
+    font-size: 14px;
+    text-transform: none;
 }
 
 
-.create .create-box
+
+@media screen and (min-width: 870px)
 {
-    position: relative;
-    height: 200px;
-    background-color:#8393ca;
-    border-radius: 20px; 
-    text-align: center;
+    .moon-container
+    {
+        top: 1%;
+    }
+    .column, .columns
+    {
+        margin-left: 4%;
+    }
 }
 
-.Quiz-box
+@media screen and (max-width: 870px)
 {
-    position: relative;
-    width: 45%;
-    height: 80%;
-    background-color:var(--dark);
-    border-radius: 10px;
+    header
+    {
+        height: 75px;
+        padding: 150px 0px 0px 0px;
+    }
+    header h1
+    {
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+    header p
+    {
+        margin-bottom: 0px;
+    }
+    .row
+    {
+        flex-wrap: wrap;
+    }
+    .row-one
+    {
+        flex: 1 0 100%;
+
+    }
+    .divider
+    {
+        flex: 1 0 100%;
+    }
 }

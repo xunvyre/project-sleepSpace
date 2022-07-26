@@ -20,6 +20,6 @@ https://xunvyre.github.io/sleepSpace/
 ![A screenshot of a space-themed routine scheduling website.](./assets/images/screenshot.jpg)
 
 ## Contributors
-Project Lead and Design: Victoria David
-Team Visuals (HTML and CSS): Jacky Turnmeyer and Michael Jordan
-Team Functionality (JS): Charles Duran and Duvan Ayala Stonic
+* Project Lead and Design: Victoria David
+* Team Visuals (HTML and CSS): Jacky Turnmeyer and Michael Jordan
+* Team Functionality (JS): Charles Duran and Duvan Ayala Stonic

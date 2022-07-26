@@ -3,6 +3,7 @@ const funFact = document.querySelector("#funFact");
 const dailyRec = document.querySelector("#dailyRec");
 const quizQuestions = document.querySelector("#questions");
 const displayMusic = document.querySelector("#youtube");
+const displayMoon = document.querySelector(".moon-phase");
 //array to hold random facts
 const randomFactArry = [
   "70% + of high school students and 80% + of college students report not getting their recommended hours of sleep per night!",
@@ -65,7 +66,7 @@ window.addEventListener("load", function () {
 });
 //function to display correct phase
 var moonDisplay = function (moonPhase) {
-  if (moonPhase === 0 || moonPhase === 1) console.log("NewMoon!");
+  if (moonPhase === 0 || moonPhase === 1) console.log("New Moon");
 
   if (moonPhase >= 0.1 && moonPhase <= 0.24) console.log("Waxing crescent!");
 
@@ -75,7 +76,9 @@ var moonDisplay = function (moonPhase) {
 
   if (moonPhase === 0.5) console.log("Full Moon!");
 
-  if (moonPhase >= 0.51 && moonPhase <= 0.99) console.log("Waning gibous!");
+  if (moonPhase >= 0.51 && moonPhase <= 0.99)
+    displayMoon.style.backgroundImage =
+      "url('./assets/images/moon-waxing-gibbous.png')";
 
   return true;
 };

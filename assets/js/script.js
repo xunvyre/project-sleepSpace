@@ -52,27 +52,16 @@ const questions = [
 const musicRec = ["n61ULEU7CO0", "cq2Ef6rvL6g", "nMfPqeZjc2c"];
 
 //function to get moonphase
-var getMoonApi = function (lat, lon) {
-  let moonApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=be26d6ce167eb956b80efee1a9fcecbd`;
+window.addEventListener("load", function () {
+  let moonApi =
+    "https://api.openweathermap.org/data/2.5/onecall?lat=28.294695&lon=-81.402534&exclude=current,minutely,hourly,alerts&appid=be26d6ce167eb956b80efee1a9fcecbd";
   fetch(moonApi)
     .then((res) => res.json())
     .then((data) => {
       let moonPhase = data.daily[0].moon_phase;
       console.log(moonPhase);
     });
-};
-//code is annoying unless this is commented out for now until new button is available
-
-//function that grabs user location (we can add this to any button just used clear as a test)
-// clearBtn.addEventListener("click", function () {
-//   navigator.geolocation.getCurrentPosition((location) => {
-//     let lat = location.coords.latitude;
-//     let lon = location.coords.longitude;
-//     //gonna pass these off to above function soon
-//     console.log(lat, lon);
-//     getMoonApi(lat, lon);
-//   });
-// });
+});
 
 //fun fact function (random) occurs on load or refresh
 window.onload = function randomFact() {

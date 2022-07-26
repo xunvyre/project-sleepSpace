@@ -60,8 +60,25 @@ window.addEventListener("load", function () {
     .then((data) => {
       let moonPhase = data.daily[0].moon_phase;
       console.log(moonPhase);
+      moonDisplay(moonPhase);
     });
 });
+//function to display correct phase
+var moonDisplay = function (moonPhase) {
+  if (moonPhase === 0 || moonPhase === 1) console.log("NewMoon!");
+
+  if (moonPhase >= 0.1 && moonPhase <= 0.24) console.log("Waxing crescent!");
+
+  if (moonPhase === 0.25) console.log("First Quarter Moon!");
+
+  if (moonPhase >= 0.26 && moonPhase <= 0.49) console.log("Waxing Gibious!");
+
+  if (moonPhase === 0.5) console.log("Full Moon!");
+
+  if (moonPhase >= 0.51 && moonPhase <= 0.99) console.log("Waning gibous!");
+
+  return true;
+};
 
 //fun fact function (random) occurs on load or refresh
 window.onload = function randomFact() {

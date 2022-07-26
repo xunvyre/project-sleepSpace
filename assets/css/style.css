@@ -22,10 +22,6 @@ body
 
 }
 
-body {
-  background-color: var(--dark);
-}
-
 .box
 {
     background-color: var(--mid);
@@ -35,21 +31,45 @@ body {
     box-shadow: 0px 5px 5px 0px var(--dark);
 }
 
-.box {
-  background-color: var(--mid);
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 2px 2px 2px 1px #301934;
-}
-
-.row {
+.row
+{
   display: flex;
   justify-content: space-between;
   align-items: stretch;
 }
 
-.center-row {
+.center-row
+{
   align-items: center;
+}
+/*--------modal*/
+
+.modal
+{
+    display: none;
+    z-index: 3;
+    height: fit-content;
+    width: 400px;
+    background-color: var(--light);
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -200px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 8px 0px var(--dark);
+    padding: 10px;
+}
+
+.modal p
+{
+    text-align: center;
+}
+
+.modal button
+{
+    background-color: var(--dark);
+    color: var(--light);
+    margin: 10px 150px;
 }
 
 /*--------header styles*/

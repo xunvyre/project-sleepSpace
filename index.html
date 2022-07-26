@@ -1,101 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css
-  "
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>sleepSpace</title>
-  </head>
 
-  <body>
-    <!--"sticky" moon-->
-    <div class="moon-container">
-      <div class="moon-phase"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>sleepSpace</title>
+</head>
+
+<body>
+
+<!--"sticky" moon-->
+  <div class="moon-container">
+    <div class="moon-phase"></div>
+  </div>
+
+<!--actual header-->
+  <header>
+
+    <div class="container">
+      <div class="row center-row">
+        <h1 class="four columns">
+          sleepSpace
+        </h1>
+        <p class="offset-by-four four columns">
+          your space for healthy sleep habits
+        </p>
+      </div>
     </div>
 
-    <!--actual header-->
-    <header>
-      <div class="container">
-        <div class="row header-row">
-          <h1 class="four columns">sleepSpace</h1>
-          <p class="offset-by-four four columns">
-            your space for healthy sleep habits
-          </p>
-        </div>
-      </div>
-    </header>
+  </header>
 
-    <!--main content-->
-    <main class="container">
-      <!--first content row-->
-      <div class="row">
-        <div class="five columns box">
-          <h3>Did You Know...</h3>
-          <p id="funFact"></p>
-        </div>
-        <div class="two columns divider"></div>
-        <div class="five columns box">
-          <h3>We recommend...</h3> 
-        </br>
-          <p id="dailyRec"></p>
-        </div>
-      </div>
+<!--main content-->
+  <main class="container">
 
-      <!--habits-->
-      <div class="box large-box">
-        <h2>Create Your Own sleepSpace</h2>
+<!--first content row-->
+    <div class="row">
+      <div class="five columns box row-one">
+        <h3>Did you know...</h3>
+        <p id="funFact"></p>
+      </div>
+      <div class="two columns divider"></div>
+      <div class="five columns box row-one">
+        <h3>We recommend... </h3>
+        <p id="dailyRec"></p>
+      </div>
+    </div>
+
+<!--habits-->
+    <div class="box">
+      <h2>Create your own sleepSpace!</h2>
       <p>
         Are you tired of being, well, tired? Yeah, we are too. Welcome to
         <strong>sleepSpace</strong>,where our goal is to help you reach you goal of a
         good night's sleep. Put a pin in the stress of tomorrow to focus on
         you relaxing night. It's your space, with <strong>sleepSpace!</strong>
       </p>
-        <h2>start your nightly journey by taking the quiz below!</h2>
-      </div>
+      <h2 class="h2-variant">Start your nightly journey by taking the quiz below!</h2>
+    </div>
 
-      <!--quiz-->
-      <div class="box large-box">
-        <h2>Build Healthy Habits With The sleepSpace Quiz!</h2>
-        <div class="row">
-          <div class="six columns" id="questions">Question 1:</div>
-          <div class="six columns">
-            <div class="box">answer 1</div>
-            <div class="box">answer 2</div>
-            <div class="box">answer 3</div>
+<!--quiz-->
+    <div class="box last-box">
+      <h2>Build healthy habits with the sleepSpace quiz!</h2>
+      <div class="row center-row">
+        <div class="six columns box quiz-box">
+          <h2>Question 1:</h2>
+          <p>
+            1.	Drinking enough water throughout the day can affect your whole life, 
+            including your sleep patterns! Would you like us to remind you to stay hydrated?
+          </p>
+        </div>
+        <div class="six columns questions">
+          <div class="box quiz-box answer">
+            <p>I already do that!</p>
+          </div>
+          <div class="box quiz-box answer">
+            <p>I'd like to try that!</p>
+          </div>
+          <div class="box quiz-box answer">
+            <p>No thank you.</p>
           </div>
         </div>
       </div>
-    </main>
-    
-<!--just having  youtube it display here for testing purposes-->
-  <div id="youVid"></div>
+    </div>
       
+  </main>
+  
+<!--music API-->
+  <div id="youVid"></div>
 
-     
-    <!--footer-->
-    <footer class="container">
-      <div class="row center-row">
-        <div class="eight columns">
-          <p>Project Lead and Design: Victoria David</p>
-          <p>Team Visuals: Jacky Turnmeyer and Michael Jordan</p>
-          <p>Team Functionality: Charles Duran and Duvan Ayala Stonic</p>
-          <p>©2022, All Rights Reserved</p>
-        </div>
-        <div class="four columns">
-          <button class="is-block button is-medium ml-6" type="button" id="borrowing" onclick="myfunction()">Clear My Data</button>
-        </div>
+<!--footer-->
+  <footer>
+    <div class="container row center-row">
+      <div class="eight columns">
+        <p>
+          Project Lead and Design: Victoria David <br />
+          Team Visuals: Jacky Turnmeyer and Michael Jordan <br />
+          Team Functionality: Charles Duran and Duvan Ayala Stonic <br />
+          ©2022, All Rights Reserved
+        </p>
       </div>
-    </footer>
+      <div class="four columns">
+        <button type="button" id="clearButton">
+          <p>Clear My Data</p>
+        </button>
+      </div>
+    </div>
+  </footer>
 
-    <!--script that fetches from  youtube iframe API-->
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="./assets/js/script.js"></script>
-   
-  </body>
+  <modal>
+    <div class="modal">
+      <h2 class="h2-variant">Erorr!</h2>
+      <p>Description</p>
+      <button type="button">Okay</button>
+    </div>
+  </modal>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+
 </html>

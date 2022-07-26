@@ -6,147 +6,255 @@
   --white: #fff;
 }
 
-* {
-  font-family: "Century Gothic", Arial, Helvetica, sans-serif;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+*
+{
+    font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+    color: var(--dark);
 }
 
-body {
-  background-color: var(--dark);
+body
+{
+    background-image: url("../images/sleepSpaceBG.png");
+    background-position: center;
+    background-attachment: bottom;
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+
 }
 
-.margin-top {
-  margin-top: 20px;
+.box
+{
+    background-color: var(--mid);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 7px 0px;
+    box-shadow: 0px 5px 5px 0px var(--dark);
 }
 
-.box {
-  background-color: var(--mid);
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 2px 2px 2px 1px #301934;
-}
-
-.row {
+.row
+{
   display: flex;
   justify-content: space-between;
   align-items: stretch;
 }
 
-.center-row {
+.center-row
+{
   align-items: center;
+}
+/*--------modal*/
+
+.modal
+{
+    display: none;
+    z-index: 3;
+    height: fit-content;
+    width: 400px;
+    background-color: var(--light);
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -200px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 8px 0px var(--dark);
+    padding: 10px;
+}
+
+.modal p
+{
+    text-align: center;
+}
+
+.modal button
+{
+    background-color: var(--dark);
+    color: var(--light);
+    margin: 10px 150px;
 }
 
 /*--------header styles*/
 
-.moon-container {
-  margin: 0 auto;
-  position: fixed;
-  left: 50%;
-  margin-left: -75px;
-  z-index: 999;
+.moon-container
+{
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 2;
 }
 
-.moon-phase {
-  background-color: #dbdacb;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  
+.moon-phase
+{
+    background-image: url(../images/moon_full.png);
+    background-position: center;
+    background-attachment: center;
+    background-size: contain;
+    background-color: #dbdacb;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
 }
 
-header {
-  height: 150px;
-  padding: 30px;
+header
+{
+    height: 150px;
+    padding: 30px;
+}
+
+header h1
+{
+    font-weight: 700;
+    font-size: 42px;
+    text-align: center;
+    color: var(--light);
+    /*background-image: linear-gradient(180deg, var(--light) 20%, black 100%);
+    background-clip: text;
+    -webkit-background-clip: text;*/
+}
+
+header p
+{
+    color: var(--white);
+    text-align: center;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 /*--------main content styles*/
-
-.large-box {
-  margin: 20px 0px;
-  text-align: center;
-  padding-left: 20px;
-  padding-right: 20px;
+h2, h3, h4
+{
+    font-weight: 700;
 }
 
-.large-box h2 {
-  font-size: 30px;
-  font-weight: 800;
-  color: #fff;
-  text-shadow: 1px 1px #0000;
-  margin-top: 24px;
+h2
+{
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 0px 3px 2px var(--dark);
+    color: var(--white);
 }
 
-.large-box p {
-  font-size: 16px;
+.h2-variant
+{
+    color: var(--dark);
+    text-shadow: none;
 }
 
-.large-box h3 {
-  font-size: 26px;
-  font-weight: 800;
+h3
+{
+    font-size: 25px;
 }
 
-p {
-  text-align: center;
-
-  color: var(--white);
-}
-header h1{
-    background: -webkit-linear-gradient(#efefef,rgb(252, 252, 252));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+p
+{
+    font-size: 18px;
+    margin: 0px 0px 5px 5px;
 }
 
-h1 {
-  font-size: 40px;
-  text-shadow: 2px 2px 5px #202b35;
-  color: var(--light);
-  font-weight: 900;
+/*--------quiz styles*/
+
+.last-box
+{
+    margin: 14px 0px;
 }
 
-footer {
-  background-color: #202b35;
-  border-radius: 20px;
+.quiz-box
+{
+    background-color: var(--dark);
+    box-shadow: none;
 }
 
-button {
-  background-color: #8393ca;
-  box-shadow: 2px 2px 2px 1px #301934;
-}
-
-.five p {
-  font-size: 12px;
-  margin-bottom: 0px;
-  text-align: left;
-}
-
-.five h3 {
-  font-size: 30px;
-  font-weight: 800;
-  margin-bottom: 1px;
-}
-.dark-box {
-    padding: 10px;
-    background-color: #202b35;
-    color: #fff;
-    border-radius: 20px;
-}
-
-.dark-box h2 {
-    font-size: 28px;
-    font-weight: 800;
-    margin: 0 auto 25px auto;
-    border-bottom: 2px solid var(--white);
-    width: 80%;
+.quiz-box h2
+{
     padding-bottom: 5px;
+    border-bottom: 3px solid var(--white);
 }
 
-.second-box .box{
-    margin-bottom: 10px;
-    background-color: #202b35;
-    color: #fff;
-    font-size: 17px;
+.quiz-box p
+{
+    color: var(--white);
+}
+
+.answer
+{
+    margin-top: 15px;
+}
+.answer p
+{
+    text-align: center;
+    font-size: 20px;
+    margin: 0px;
+}
+/*--------footer styles*/
+
+footer
+{
+    margin-top: 100px;
+    background-color: var(--dark);
+}
+
+footer p
+{
+    margin: 0px 0px 0px 5px;
+    color: var(--white);
+    font-size: 12px;
+}
+
+button
+{
+    background-color: #dbdacb;
+    border-radius: 12px;
+    height: auto;
+}
+
+footer button p
+{
+    color: var(--dark);
+    font-size: 14px;
+    text-transform: none;
 }
 
 
+
+@media screen and (min-width: 870px)
+{
+    .moon-container
+    {
+        top: 1%;
+    }
+    .column, .columns
+    {
+        margin-left: 4%;
+    }
+}
+
+@media screen and (max-width: 870px)
+{
+    header
+    {
+        height: 75px;
+        padding: 150px 0px 0px 0px;
+    }
+    header h1
+    {
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+    header p
+    {
+        margin-bottom: 0px;
+    }
+    .row
+    {
+        flex-wrap: wrap;
+    }
+    .row-one
+    {
+        flex: 1 0 100%;
+
+    }
+    .divider
+    {
+        flex: 1 0 100%;
+    }
+}

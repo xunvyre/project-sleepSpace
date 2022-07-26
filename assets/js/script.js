@@ -48,10 +48,8 @@ const questions = [
   "Background noise can be beneficial for focus and relaxation. Music, white noise, or even a familiar tv show can help you relax. Would you like to add background noise to your sleepSpace?",
   "Powering down is an important part of falling asleep, as most digital apps are designed to keep you engaged. This is a great time to focus on an offline hobby like crochet, or to refocus your brain by doing puzzle activities. Would you to add an offline activity to your sleepSpace?",
 ];
-
-const musicRec = [
-  ""
-]
+//IDs for youtube rec (currently just some random ones. Some videos won't display until our site is published)
+const musicRec = ["n61ULEU7CO0", "cq2Ef6rvL6g", "nMfPqeZjc2c"];
 
 //function to get moonphase
 var getMoonApi = function (lat, lon) {
@@ -81,6 +79,13 @@ window.onload = function randomFact() {
   let randomNum = Math.floor(Math.random() * randomFactArry.length);
   funFact.innerHTML = randomFactArry[randomNum];
   dailyRecHandler();
+  youtubeRec();
+};
+
+var youtubeRec = function () {
+  let randYou = Math.floor(Math.random() * musicRec.length);
+  let youMusic = musicRec[randYou];
+  playRandomYoutube(youMusic);
 };
 
 //Switches to another rec based on time //similar code can be used for habit list reappearing
@@ -92,31 +97,39 @@ var dailyRecHandler = function () {
   dailyRec.innerHTML = dailyRecArry[i];
 };
 
-//Youtube API loads from script in HTML
-var youVid;
-function onYouTubeIframeAPIReady() {
-  youVid = new YT.Player("youVid", {
-    height: "390",
-    width: "640",
-    videoId: "n61ULEU7CO0", //Change id here. Found in URL of youtube vids
-    playerVars: {
+//Youtube API fetches from script in HTML
 
-      playsinline: 1,
-    },
-    events: {
-      onReady: onPlayerReady,
-    },
-  });
+function onYouTubeIframeAPIReady() {
+  console.log("Loaded");
 }
 // plays video once ready (google chrome does not allow autoplay)
 function onPlayerReady(event) {
   event.target.playVideo();
 }
+var player;
+function playRandomYoutube(youMusic) {
+  if (player) {
+    player.destroy();
+  }
+  player = new YT.Player("youVid", {
+    height: "200",
+    width: "200",
+    videoId: youMusic, //Change id here. Found in URL of youtube vids
+    playerVars: {
+      playsinline: 1,
+      fs: 0,
+    },
 
+    events: {
+      onReady: onPlayerReady,
+    },
+  });
+  console.log(youMusic);
+}
 
 // Clearing console and localStorage data function
-console.log("Clear my data")
+console.log("Clear my data");
 function myfunction() {
-    console.clear();
-    localStorage.clear();
+  console.clear();
+  localStorage.clear();
 }

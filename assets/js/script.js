@@ -17,7 +17,7 @@ const randomFactArry = [
   "one sleepless night affects your brain the same way as if you were intoxicated. Don't drive tired!",
   "according to NASA, the perfect nap length is 26 minutes long!",
   "REM sleep can help creative problem solving. If you're stuck, sleep on it!",
-  "blue light from digital screens mimics the sun's light in the daytime, affecting your ability to fall asleep",
+  "blue light from digital screens mimics the sun's light in the daytime, affecting your ability to fall asleep.",
   "temperatures between 60 and 67 degrees Fahrenheit have been shown to improve sleep quality!",
   "sleeping on your back is best for your health, but most Americans sleep on their side.",
   'it is illegal to "lie down and fall asleep" wearing your shoes in North Dakota!',
@@ -70,6 +70,7 @@ window.addEventListener("load", function () {
       moonDisplay(moonPhase);
     });
 });
+
 //function to display correct phase
 var moonDisplay = function (moonPhase) {
   if (moonPhase === 0 || moonPhase === 1)
@@ -144,7 +145,7 @@ function playRandomYoutube(youMusic) {
     player.destroy();
   }
   player = new YT.Player("youVid", {
-    height: "200",
+    height: "100",
     width: "200",
     videoId: youMusic, //Change id here. Found in URL of youtube vids
     playerVars: {

@@ -55,8 +55,8 @@ const questions = [
   "Powering down is an important part of falling asleep, as most digital apps are designed to keep you engaged. This is a great time to focus on an offline hobby like crochet, or to refocus your brain by doing puzzle activities. Would you to add an offline activity to your sleepSpace?",
 ];
 
-//IDs for youtube rec (currently just some random ones. Some videos won't display until our site is published)
-const musicRec = ["n61ULEU7CO0", "cq2Ef6rvL6g", "nMfPqeZjc2c"];
+//IDs for youtube rec (some videos won't display until our site is published) (settled on Lofi Hip-Hop!)
+const musicRec = ["n61ULEU7CO0", "J2UyOTS3UCE", "sSbABWGgRh0", "GluZA66XSFM", "px2YTz88lW8", "q8O6fM0qpdw", "WfMClt3K5K4", "7JMvn0wfABQ"];
 
 //function to get moonphase
 window.addEventListener("load", function () {

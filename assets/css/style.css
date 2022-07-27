@@ -286,3 +286,8 @@ footer button p
         flex: 1 0 100%;
     }
 }
+
+a {
+    color:white;
+    text-decoration: none;
+}

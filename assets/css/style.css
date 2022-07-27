@@ -125,14 +125,15 @@ button {
   font-weight: 800;
   margin-bottom: 1px;
 }
-.dark-box {
-    padding: 10px;
-    background-color: #202b35;
-    color: #fff;
-    border-radius: 20px;
+
+#dark-box\ six\ columns {
+  padding: 10px;
+  background-color: #202b35;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
 }
 
-.dark-box h2 {
+#dark-box\ six\ columns h2 {
     font-size: 28px;
     font-weight: 800;
     margin: 0 auto 25px auto;

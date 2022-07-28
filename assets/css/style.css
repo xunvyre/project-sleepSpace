@@ -201,6 +201,11 @@ p
     border-radius: 50%;
 }
 
+.click {
+    background-color:#4f6980;
+}
+
+
 .routine-div
 {
     flex: 1 0 100%;

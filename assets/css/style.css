@@ -159,3 +159,6 @@ button {
 
 }
 
+.error-msg h3 {
+  color: black; 
+}

@@ -332,3 +332,4 @@ function clearData() {
 
 loadQuiz(questions[currentQuestion]);
 getList();
+clearButton.addEventListener("click", clearData);

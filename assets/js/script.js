@@ -5,6 +5,8 @@ const quizQuestions = document.querySelector("#questions");
 const displayMusic = document.querySelector("#youtube");
 const displayMoon = document.querySelector(".moon-phase");
 const clearButton = document.querySelector("#clearButton");
+var currentQuestion = 0;
+var routineList = [];
 
 //array to hold random facts
 const randomFactArry = [
@@ -43,17 +45,171 @@ const dailyRecArry = [
 
 //array to hold questions
 const questions = [
-  "Drinking enough water throughout the day can affect your whole life, including your sleep patterns! Would you like us to remind you to stay hydrated?",
-  "Cleaning is a good way to relieve stress, feel productive, and take control of your environment. Would you like to add a 10-minute clean to your sleepSpace?",
-  "Exercising is one of the most recommended ways to improve sleep. Anything from simple stretches, to a yoga routine, to light cardio can help! Would you like to add physical activity to your sleepSpace?",
-  "There are many forms of meditation, and all of them are shown to improve sleep quality. Would you like to add meditation to your sleepSpace?",
-  "Showering is important for both personal and sleep health, but there is a strong divide between people who shower in the morning vs. the night! Would you like to add showering to your sleepSpace?",
-  "Skin care is another health practice that varies widely from person to person, and can include everything from moisturizing your feet to changing your pillowcase. Would you like us to remind you to take time for your skin care routine?",
-  "Brushing and flossing your teeth before bed is the number one recommended way to keep your teeth healthy. Would you like us to remind you to care for your teeth?",
-  "Calming, familiar smells can help relax the body and mind. Would you like to include aromatherapy in your sleepSpace? (Caution: heat-related aromatherapy items should be extinguished and/or turned off before bed and kept away from animals and children.)", //make sure text in parenthesis is smaller text when appended
-  "Background noise can be beneficial for focus and relaxation. Music, white noise, or even a familiar tv show can help you relax. Would you like to add background noise to your sleepSpace?",
-  "Powering down is an important part of falling asleep, as most digital apps are designed to keep you engaged. This is a great time to focus on an offline hobby like crochet, or to refocus your brain by doing puzzle activities. Would you to add an offline activity to your sleepSpace?",
+  {
+    title: "Question 1:",
+    ask: "Drinking enough water throughout the day can affect your whole life, including your sleep patterns! Would you like us to remind you to stay hydrated?",
+    result: "Hydrate!"
+  },
+  {
+    title: "Question 2:",
+    ask: "Cleaning is a good way to relieve stress, feel productive, and take control of your environment. Would you like to add a 10-minute clean to your sleepSpace?",
+    result: "Spend 10 minutes cleaning."
+  },
+  {
+    title: "Question 3:",
+    ask: "Exercising is one of the most recommended ways to improve sleep. Anything from simple stretches, to a yoga routine, to light cardio can help! Would you like to add physical activity to your sleepSpace?",
+    result: "Do a light exercise routine."
+  },
+  {
+    title: "Question 4:",
+    ask: "There are many forms of meditation, and all of them are shown to improve sleep quality. Would you like to add meditation to your sleepSpace?",
+    result: "Meditation session."
+  },
+  {
+    title: "Question 5:",
+    ask: "Showering is important for both personal and sleep health, but there is a strong divide between people who shower in the morning vs. the night! Would you like to add showering to your sleepSpace?",
+    result: "Take a shower (or a bath)!"
+  },
+  {
+    title: "Question 6:",
+    ask: "Skin care is another health practice that varies widely from person to person, and can include everything from moisturizing your feet to changing your pillowcase. Would you like us to remind you to take time for your skin care routine?",
+    result: "Care for my skin."
+  },
+  {
+    title: "Question 7:",
+    ask: "Brushing and flossing your teeth before bed is the number one recommended way to keep your teeth healthy. Would you like us to remind you to care for your teeth?",
+    result: "Care for my teeth."
+  },
+  {
+    title: "Question 8:",
+    ask: "Calming, familiar smells can help relax the body and mind. Would you like to include aromatherapy in your sleepSpace? (Caution: heat-related aromatherapy items should be extinguished and/or turned off before bed and kept away from animals and children.)", //make sure text in parenthesis is smaller text when appended
+    result: "Choose a relaxing scent."
+  },
+  {
+    title: "Question 9:",
+    ask: "Background noise can be beneficial for focus and relaxation. Music, white noise, or even a familiar tv show can help you relax. Would you like to add background noise to your sleepSpace?",
+    result: "Pick some background noise."
+  },
+  {
+    title: "Question 10:",
+    ask: "Powering down is an important part of falling asleep, as most digital apps are designed to keep you engaged. This is a great time to focus on an offline hobby like crochet, or to refocus your brain by doing puzzle activities. Would you to add an offline activity to your sleepSpace?",
+    result: "Go offline for a while."
+  }
 ];
+
+var getList = function()
+{
+  routineList = [];
+  currentQuestion = 0;
+  if (localStorage.getItem("routine") == null)
+  {
+    console.log("Waiting for results!");
+  }
+  else if (localStorage.getItem("routine") !== null)
+  {
+    var data = localStorage.getItem("routine");
+    routineList = JSON.parse(data);
+
+    var routineBox = document.getElementById("habit-list");
+    routineBox.innerHTML = "";
+
+    var listTitle = document.createElement("h2");
+    listTitle.textContent = "My sleepSpace:";
+    routineBox.appendChild(listTitle);
+
+    var listDiv = document.createElement("div");
+    listDiv.classList = "routine-div";
+    routineBox.appendChild(listDiv);
+
+    for (i = 0; i < routineList.length; i++)
+    {
+      var listItem = document.createElement("div");
+      listItem.classList = "box quiz-box answer row center-row";
+      listItem.setAttribute = ("id", "complete");
+      listDiv.appendChild(listItem);
+
+      var checkBox = document.createElement("div");
+      checkBox.classList = "check";
+      listItem.appendChild(checkBox);
+
+      var listText = document.createElement("p");
+      listText.textContent = routineList[i];
+      listItem.appendChild(listText);
+    }
+
+    var quizAgain = document.createElement("p");
+    quizAgain.classList = "list-text";
+    quizAgain.textContent = "You can change your routine by taking the quiz again! But first, make sure you clear your data at the bottom of the page.";
+    routineBox.appendChild(quizAgain);
+  }
+};
+
+var loadQuiz = function(question)
+{
+  //check value of currentQuestion
+  if (currentQuestion === questions.length)
+  {
+    //commit array to localStorage
+    localStorage.setItem("routine", JSON.stringify(routineList));
+    routineList = [];
+    //generate the end quiz elements if the requirement is met
+    var endBox = document.getElementById("quiz-section");
+    endBox.innerHTML = "";
+    endBox.classList = "box last-box answer";
+
+    var endTitle = document.createElement("h2");
+    endTitle.textContent = "Thank you for completing the quiz!";
+    endBox.appendChild(endTitle);
+
+    var endDesc = document.createElement("p");
+    endDesc.textContent = "Click the button below to generate your new routine!";
+    endBox.appendChild(endDesc);
+
+    var genButton = document.createElement("div");
+    genButton.innerHTML = "<p>Create my sleepSpace!</p>";
+    genButton.setAttribute = ("id", "generate");
+    genButton.classList = "box quiz-box answer";
+    endBox.appendChild(genButton);
+
+    var refreshPage = function()
+    {
+      window.location.reload()
+    }
+
+    genButton.addEventListener("click", refreshPage);
+  }
+  else
+  {
+    //loop through the questions
+    for (i = 0; i < questions.length; i++)
+    {
+      var newQuestionNum = document.getElementById("question-number");
+      newQuestionNum.textContent = question.title;
+
+      var newQuestion = document.getElementById("question");
+      newQuestion.textContent = question.ask;
+
+      //push to array if applicable, add to currentQuestion, and call the function again
+      document.getElementById("answer1").onclick = function()
+      {
+        routineList.push(question.result);
+        currentQuestion++;
+        loadQuiz(questions[currentQuestion]);
+      }
+      document.getElementById("answer2").onclick = function()
+      {
+        routineList.push(question.result);
+        currentQuestion++;
+        loadQuiz(questions[currentQuestion]);
+      }
+      document.getElementById("answer3").onclick = function()
+      {
+        currentQuestion++;
+        loadQuiz(questions[currentQuestion]);
+      }
+    }
+  }
+};
 
 //IDs for youtube rec (some videos won't display until our site is published) (settled on Lofi Hip-Hop!)
 const musicRec = ["n61ULEU7CO0", "J2UyOTS3UCE", "sSbABWGgRh0", "GluZA66XSFM", "px2YTz88lW8", "q8O6fM0qpdw", "WfMClt3K5K4", "7JMvn0wfABQ"];
@@ -132,12 +288,12 @@ var dailyRecHandler = function () {
 //Youtube API fetches from script in HTML
 function onYouTubeIframeAPIReady() {
   console.log("Loaded");
-}
+};
 
 // plays video once ready (google chrome does not allow autoplay)
 function onPlayerReady(event) {
   event.target.playVideo();
-}
+};
 
 var player;
 function playRandomYoutube(youMusic) {
@@ -158,12 +314,16 @@ function playRandomYoutube(youMusic) {
     },
   });
   console.log(youMusic);
-}
+};
 
 //clear console and local storage
 function clearData() {
   console.clear();
   localStorage.clear();
-}
+  window.location.reload()
+};
 
+
+loadQuiz(questions[currentQuestion]);
+getList();
 clearButton.addEventListener("click", clearData);

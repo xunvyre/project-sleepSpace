@@ -181,6 +181,11 @@ p
     margin-top: 15px;
 }
 
+.answer:hover
+{
+    cursor: pointer;
+}
+
 .answer p
 {
     text-align: center;
@@ -194,6 +199,11 @@ p
     width: 25px;
     background-color: var(--light);
     border-radius: 50%;
+}
+
+.routine-div
+{
+    flex: 1 0 100%;
 }
 
 /*--------music API styles*/
@@ -234,7 +244,7 @@ button
     height: auto;
 }
 
-footer button p
+button p
 {
     color: var(--dark);
     font-size: 14px;
